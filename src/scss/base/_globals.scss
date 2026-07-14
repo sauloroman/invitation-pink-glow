@@ -1,0 +1,41 @@
+@use '../base/colors' as c;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: c.$orchid-tint-900;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+}
+
+a,
+button {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+ul,
+ol,
+dl {
+    list-style: none;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}

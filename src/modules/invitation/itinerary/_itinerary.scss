@@ -1,0 +1,93 @@
+@use '../../../scss/base/mixins' as m;
+@use '../../../scss/base/variables' as v;
+@use '../../../scss/base/colors' as c;
+
+.itinerary {
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+    margin-bottom: 10rem;
+    position: relative;
+
+    &__header {
+        margin-bottom: 6rem;
+
+        &-icon {
+            margin-bottom: 2rem;
+            @include m.icon(c.$beige-tint-900, c.$orchid-base, 1rem);
+        }
+    }
+
+    &__list {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__item {
+        width: 100%;
+        gap: 2rem;
+
+        &-content {
+            width: 100%;
+        }
+
+        &-icon-box {
+            flex-basis: 7rem;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 1rem;
+            border: 1px solid c.$orchid-tint-200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: c.$orchid-tint-900;
+        }
+
+        &-icon {
+            color: c.$orchid-shade-200;
+        }
+
+        &-hour {
+            font-family: v.$font-serif;
+            background-color: c.$orchid-tint-700;
+            padding: .5rem 1rem;
+            border-radius: 5px;
+            color: c.$white-shade-600;
+        }
+
+        &-name {
+            font-family: v.$font-serif;
+            font-size: 1.6rem;
+            color: c.$orchid-shade-200;
+        }
+
+        &-description {
+            font-family: v.$font-serif;
+            font-size: 1.2rem;
+            color: c.$beige-shade-300;
+        }
+    }
+
+
+    &__decoration {
+        position: absolute;
+        opacity: .6;
+        object-fit: cover;
+        pointer-events: none;
+
+        &--left {
+            top: 10%;
+            left: 5%;
+            width: 10rem;
+        }
+
+        &--right {
+            right: 2%;
+            bottom: -5%;
+            width: 10rem;
+        }
+    }
+
+}

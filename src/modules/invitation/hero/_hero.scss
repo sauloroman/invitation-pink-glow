@@ -1,0 +1,134 @@
+@use '../../../scss/base/colors' as c;
+
+.hero {
+    height: 75vh;
+    position: relative;
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: c.$white-tint-100;
+        opacity: .2;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center 25%;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    &__particle {
+        z-index: 2;
+        height: 100%;
+        pointer-events: none;
+        touch-action: none;
+    }
+
+    &__main {
+        position: absolute;
+        bottom: 12%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-title {
+            text-align: center;
+            font-size: 8rem;
+            font-weight: 300;
+            line-height: 1.2;
+            letter-spacing: 5px;
+            color: c.$warrior-shade-100;
+        }
+
+        &-icon {
+            color: c.$beige-shade-800;
+            margin-bottom: 1.5rem;
+        }
+
+        &-subtitle {
+            width: fit-content;
+            min-width: 20rem;
+            margin: 0 auto;
+            margin-top: 2rem;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            padding: .5rem 2rem;
+            border-radius: 5px;
+            background-color: c.$orchid-base;
+            color: c.$beige-tint-900;
+        }
+    }
+
+    // Media Queries for tablet/laptop adaptability
+    @media (min-width: 768px) {
+        height: 85vh;
+
+        &__main {
+            bottom: 15%;
+
+            &-title {
+                font-size: 10rem;
+                letter-spacing: 7px;
+            }
+
+            &-subtitle {
+                font-size: 1.6rem;
+                letter-spacing: 4px;
+                padding: .6rem 2.5rem;
+            }
+        }
+    }
+
+    @media (min-width: 1024px) {
+        height: 80vh;
+
+        &__bg {
+            background-position: top;
+            background-size: cover;
+        }
+
+        &__main {
+            bottom: 8%;
+            left: 8%;
+            transform: none;
+            align-items: flex-start;
+            width: auto;
+
+            &-title {
+                text-align: left;
+                font-size: 11rem;
+                letter-spacing: 5px;
+            }
+
+            &-icon {
+                margin-left: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            &-subtitle {
+                margin: 0;
+                margin-top: 1.5rem;
+                font-size: 1.8rem;
+                letter-spacing: 5px;
+                padding: .8rem 3rem;
+            }
+        }
+    }
+}

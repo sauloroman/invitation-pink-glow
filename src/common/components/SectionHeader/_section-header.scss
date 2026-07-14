@@ -1,0 +1,29 @@
+@use '../../../scss/base/colors' as c;
+
+.section-header {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 2.8rem;
+        font-weight: 300;
+        color: c.$beige-shade-800;
+        letter-spacing: 3px;
+        padding-bottom: 2px;
+        border-bottom: 1px solid c.$beige-base;
+    }
+
+    &__subtitle {
+        text-align: center;
+        letter-spacing: 3px;
+        font-size: 1.6rem;
+        color: c.$beige-shade-700;
+        text-transform: uppercase;
+    }
+}

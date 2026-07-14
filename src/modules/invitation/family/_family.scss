@@ -1,0 +1,141 @@
+@use '../../../scss/base/variables' as v;
+@use '../../../scss/base/colors' as c;
+@use '../../../scss/base/mixins' as m;
+
+.family {
+    padding: 8rem 0;
+    background-color: c.$orchid-tint-900;
+
+    @media (min-width: 768px) {
+        padding: 10rem 0;
+    }
+
+    &__header {
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+        &-icon {
+            @include m.icon(c.$beige-tint-900, c.$orchid-base, 1rem);
+        }
+    }
+
+    &__line {
+        width: 1px;
+        margin: 0 auto;
+        @include m.line(4rem, false);
+    }
+
+    &__icon {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            opacity: .7;
+            transform: rotate(-45deg);
+            width: 8rem;
+            object-fit: cover;
+        }
+    }
+
+    &__card {
+        margin: 4rem auto 0;
+        background-color: c.$orchid-tint-200;
+        border-radius: 8px;
+        padding: 6rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        position: relative;
+
+        @media (min-width: 768px) {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            padding: 8rem 4rem;
+        }
+
+        &-content {
+            text-align: center;
+            flex: 1;
+            width: 100%;
+        }
+    }
+
+    &__text {
+        margin: 0 auto;
+        width: 75%;
+        max-width: 600px;
+        text-align: center;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        color: c.$beige-shade-600;
+        padding-bottom: 3.2rem;
+
+        span {
+            font-family: v.$font-serif;
+            color: c.$orchid-base;
+        }
+
+        @media (min-width: 768px) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__canasta {
+        position: absolute;
+        bottom: -2rem;
+        right: 0rem;
+        z-index: 10;
+        pointer-events: none;
+        display: block;
+        margin: 0;
+
+        img {
+            opacity: 0.95;
+            width: 9rem;
+            object-fit: cover;
+        }
+
+        &::before,
+        &::after {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            bottom: -3.5rem;
+            right: 50%;
+            transform: translateX(50%);
+
+            img {
+                width: 13rem;
+            }
+        }
+    }
+
+    &__parent {
+        color: c.$white-tint-800;
+        font-family: v.$font-cursive;
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+        margin-bottom: 1.5rem;
+    }
+
+    &__names {
+        display: flex;
+        font-family: v.$font-serif;
+        flex-direction: column;
+        font-size: 1.5rem;
+        color: c.$white-tint-700;
+        gap: 0.8rem;
+        line-height: 1.4;
+    }
+
+}

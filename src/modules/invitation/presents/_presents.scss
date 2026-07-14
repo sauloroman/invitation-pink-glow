@@ -1,0 +1,66 @@
+@use '../../../scss/base/variables' as v;
+@use '../../../scss/base/colors' as c;
+@use '../../../scss/base/mixins' as m;
+
+.presents {
+    height: 65rem;
+    position: relative;
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: c.$white-tint-100;
+        opacity: .2;
+    }
+
+    &__container {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        height: 100%;
+    }
+
+    &__header {
+        margin-bottom: 2rem;
+
+        &-icon {
+            margin-bottom: 2rem;
+            @include m.icon(c.$beige-tint-900, c.$orchid-base, 1rem);
+        }
+    }
+
+    &__content {
+        border: 10px solid c.$orchid-tint-800;
+        width: 85%;
+        background-color: c.$beige-tint-900;
+        position: absolute;
+        bottom: -40%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 3rem;
+    }
+
+    &__text {
+        text-align: center;
+        letter-spacing: 1px;
+        color: c.$warrior-tint-500;
+        margin-bottom: 2rem;
+    }
+
+    &__decoration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+
+        img {
+            width: 70%;
+            margin-bottom: -3rem;
+        }
+    }
+
+}

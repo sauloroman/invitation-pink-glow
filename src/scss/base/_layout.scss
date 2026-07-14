@@ -1,0 +1,60 @@
+@use './colors' as c;
+
+.flex {
+    display: flex;
+
+    &-col {
+        flex-direction: column;
+    }
+}
+
+.items-center {
+    align-items: center;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+    place-content: center;
+
+    &-2-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.center-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dot {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: c.$beige-tint-100;
+}
+
+.invitation {
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+
+    @media (min-width: 1024px) {
+        max-width: 1200px;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
+    }
+}

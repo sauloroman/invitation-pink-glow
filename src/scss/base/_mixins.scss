@@ -1,0 +1,112 @@
+@use './colors' as c;
+
+@mixin line($height, $showCircle: true, $circlePosition: 'bottom') {
+    width: 2px;
+    height: $height;
+    opacity: .4;
+    background-color: color-mix(in srgb, c.$orchid-base 50%, transparent);
+    position: relative;
+
+    @if($circlePosition =='bottom' and $showCircle) {
+        &::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: color-mix(in srgb, c.$orchid-base 80%, transparent);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    @if($circlePosition =='top' and $showCircle) {
+        &::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: color-mix(in srgb, c.$orchid-base 80%, transparent);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@mixin icon($color, $bg-color, $size) {
+    padding: $size;
+    border-radius: 50%;
+    background-color: $bg-color;
+    color: $color;
+}
+
+@mixin folded-corners(
+    $size: 3rem, 
+    $corners: 'both', 
+    $bg-dark: c.$orchid-tint-600, 
+    $bg-light: c.$orchid-tint-900, 
+    $border-color: c.$orchid-base, 
+    $size-y: null
+) {
+    position: relative;
+    $size-x: $size;
+
+    @if ($size-y == null) {
+        $size-y: $size;
+    }
+
+    $clip-top-left: "0 0";
+    $clip-top-right: "100% 0";
+    $clip-bottom-right: "100% 100%";
+    $clip-bottom-left: "0 100%";
+
+    @if ($corners == 'both' or $corners == 'top-right') {
+        $clip-top-right: "calc(100% - #{$size-x}) 0, 100% #{$size-y}";
+    }
+
+    @if ($corners == 'both' or $corners == 'bottom-left') {
+        $clip-bottom-left: "#{$size-x} 100%, 0 calc(100% - #{$size-y})";
+    }
+
+    clip-path: polygon(#{$clip-top-left},
+        #{$clip-top-right},
+        #{$clip-bottom-right},
+        #{$clip-bottom-left});
+
+    @if ($corners == 'both' or $corners == 'bottom-left') {
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: $size-x;
+            height: $size-y;
+            background: linear-gradient(to top right, transparent 50%, $bg-dark 50%, $bg-light 100%);
+            border-top: 1px solid $border-color;
+            border-right: 1px solid $border-color;
+            filter: drop-shadow(2px -2px 2px rgba(0, 0, 0, 0.08));
+            z-index: 10;
+            pointer-events: none;
+        }
+    }
+
+    @if ($corners == 'both' or $corners == 'top-right') {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: $size-x;
+            height: $size-y;
+            background: linear-gradient(to top right, $bg-light 0%, $bg-dark 50%, transparent 50%);
+            border-bottom: 1px solid $border-color;
+            border-left: 1px solid $border-color;
+            filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.08));
+            z-index: 10;
+            pointer-events: none;
+        }
+    }
+}

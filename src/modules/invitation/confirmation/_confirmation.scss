@@ -1,0 +1,194 @@
+@use '../../../scss/base/colors' as c;
+@use '../../../scss/base/variables' as v;
+
+.confirmation {
+
+    margin-top: 35rem;
+
+    &__container {
+        width: 85%;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+    }
+
+    &__header {
+        margin-bottom: 2rem;
+    }
+
+    &__text {
+        text-align: center;
+        margin-top: 2rem;
+        letter-spacing: 1px;
+        color: c.$warrior-tint-500;
+        width: 80%;
+        margin-inline: auto;
+    }
+
+    &__form {
+        width: 100%;
+        max-width: 450px;
+        background-color: c.$orchid-tint-800;
+        padding: 4rem 3rem;
+        color: c.$warrior-tint-100;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.05);
+
+        &-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        &-label {
+            font-family: v.$font-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        &-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        &-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+
+            &-text {
+                font-family: v.$font-sans;
+                font-size: 1.4rem;
+                margin: 0;
+            }
+        }
+
+        &-radio {
+            appearance: none;
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid c.$warrior-tint-400;
+            border-radius: 4px;
+            display: grid;
+            place-content: center;
+            background-color: transparent;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+
+            &:checked {
+                border-color: c.$orchid-shade-200;
+                background-color: c.$orchid-shade-200;
+
+                &::before {
+                    transform: scale(1);
+                }
+            }
+
+            &::before {
+                content: "";
+                width: 1rem;
+                height: 1rem;
+                background-color: white;
+                clip-path: polygon(14% 44%, 0 58%, 35% 93%, 100% 27%, 86% 13%, 35% 65%);
+                transform: scale(0);
+                transition: 120ms transform ease-in-out;
+            }
+        }
+
+        &-input {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid c.$warrior-tint-400;
+            padding: 0.8rem 0;
+            font-family: v.$font-sans;
+            font-size: 1.4rem;
+            color: inherit;
+            outline: none;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-bottom-color: c.$orchid-shade-200;
+            }
+
+            &:disabled {
+                opacity: 0.7;
+                cursor: not-allowed;
+            }
+        }
+
+        &-select {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid c.$warrior-tint-400;
+            padding: 0.8rem 0;
+            font-family: v.$font-sans;
+            font-size: 1.4rem;
+            color: inherit;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-bottom-color: c.$orchid-shade-200;
+            }
+
+            option {
+                background-color: c.$orchid-tint-800;
+                color: c.$warrior-tint-100;
+            }
+        }
+
+        &-textarea {
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid c.$warrior-tint-400;
+            border-radius: 6px;
+            padding: 1.2rem;
+            font-family: v.$font-sans;
+            font-size: 1.4rem;
+            color: inherit;
+            outline: none;
+            min-height: 10rem;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-color: c.$orchid-shade-200;
+            }
+
+            &::placeholder {
+                color: c.$warrior-tint-400;
+                opacity: 0.8;
+            }
+        }
+
+        &-error {
+            font-size: 1rem;
+            text-align: right;
+            color: red;
+        }
+
+        &-buttons {
+            margin-top: 1rem;
+        }
+
+    }
+
+    &__decoration {
+        img {
+            width: 100%;
+            opacity: .8;
+        }
+    }
+
+}

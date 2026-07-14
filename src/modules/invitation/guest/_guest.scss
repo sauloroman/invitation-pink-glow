@@ -1,0 +1,182 @@
+@use '../../../scss/base/colors' as c;
+@use '../../../scss/base/variables' as v;
+@use '../../../scss/base/mixins' as m;
+
+.guest {
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__wrapper {
+        position: relative;
+        width: 80%;
+        max-width: 450px;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__container {
+        background-color: c.$orchid-tint-800;
+        padding: 1rem;
+        width: 100%;
+        position: relative;
+        @include m.folded-corners(3rem, 'bottom-left');
+    }
+
+    &__monio {
+        position: absolute;
+        bottom: -6rem;
+        right: -1.5rem;
+        z-index: 15;
+        pointer-events: none;
+
+        img {
+            width: 12rem;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.15));
+        }
+    }
+
+    &__content {
+        position: relative;
+        background-color: c.$beige-tint-900;
+        padding: 5rem 4rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+    }
+
+    &__header {
+        margin-bottom: 3.2rem;
+    }
+
+    &__text {
+        width: 80%;
+        font-family: v.$font-serif;
+        font-size: 2.2rem;
+        font-weight: 300;
+        color: c.$beige-shade-300;
+        text-align: center;
+        line-height: 1.6;
+        margin-bottom: 4rem;
+    }
+
+    &__buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    &__footer {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        z-index: 2;
+
+        p {
+            font-size: 1.6rem;
+            color: c.$beige-shade-300;
+            text-align: center;
+            line-height: 1.8;
+
+            strong {
+                font-weight: 600;
+                color: c.$beige-shade-300;
+            }
+        }
+    }
+
+    &__place {
+        width: 90%;
+        max-width: 420px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: -2rem;
+    }
+
+    &__photo-wrapper {
+        position: relative;
+        width: 80%;
+        max-width: 360px;
+        margin: 4rem auto 0 auto;
+        padding: 1rem;
+    }
+
+    &__photo-frame {
+        padding: 1.2rem;
+        border-radius: 20rem 20rem 1.5rem 1.5rem;
+        border: 1px solid c.$beige-tint-200;
+        box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 2;
+    }
+
+    &__photo {
+        margin: 5rem 0;
+        margin-bottom: 2rem;
+        width: 80%;
+        height: 45rem;
+        border-radius: 18.8rem 18.8rem 0.8rem 0.8rem;
+        background-size: cover;
+        background-position: top;
+    }
+
+    &__photo-butterflies {
+        position: absolute;
+        top: -3.5rem;
+        right: -3rem;
+        width: 11rem;
+        height: auto;
+        z-index: 3;
+        pointer-events: none;
+        filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.12));
+    }
+
+    &__photo-flower {
+        position: absolute;
+        bottom: -2.5rem;
+        left: -3.5rem;
+        width: 13rem;
+        height: auto;
+        z-index: 3;
+        pointer-events: none;
+        filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.08));
+    }
+
+    &__jarron {
+        width: 14rem;
+        object-fit: cover;
+        z-index: 2;
+    }
+
+    &__end {
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+            font-family: v.$font-cursive;
+            font-size: 2.4rem;
+            font-weight: bold;
+            color: c.$orchid-shade-100;
+        }
+    }
+
+    &__date {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+}

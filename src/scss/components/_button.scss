@@ -1,0 +1,29 @@
+@use '../base/colors' as c;
+
+.btn {
+
+    padding: 1.5rem 1rem;
+    width: 100%;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    border-radius: 100px;
+    transition: all .4s ease;
+
+    &--pink {
+        color: white;
+        background-color: c.$orchid-shade-200;
+
+        &:hover {
+            background-color: c.$orchid-base;
+        }
+    }
+
+    &--outline {
+        color: c.$orchid-shade-200;
+        background-color: transparent;
+        border: 1px solid currentColor;
+    }
+
+}
