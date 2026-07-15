@@ -5,8 +5,12 @@
 .locations {
     margin-top: -3rem;
 
+    svg {
+        display: block;
+    }
+
     &__container {
-        margin-top: -1rem;
+        margin-top: -2rem;
         background-color: c.$orchid-tint-800;
         padding: 0 2rem 4rem;
     }
@@ -129,7 +133,66 @@
 
         &-img {
             opacity: .7;
-            width: 100%;
+            width: 90%;
+        }
+    }
+
+    @media (min-width: 768px) {
+        &__container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 4rem 6rem;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        &__item {
+            width: 32%;
+            max-width: 340px;
+            margin: 0;
+        }
+
+        &__place {
+            width: 25%;
+            max-width: 250px;
+            margin: 0;
+            align-self: center;
+
+            &-img {
+                width: 100%;
+            }
+        }
+
+        &__image {
+            max-width: 420px;
+            height: 52rem;
+            margin: 4rem auto 0;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        &__container {
+            max-width: 1200px;
+        }
+
+        &__list {
+            gap: 4rem;
+        }
+
+        &__item {
+            max-width: 360px;
+        }
+
+        &__image {
+            max-width: 450px;
+            height: 56rem;
         }
     }
 }

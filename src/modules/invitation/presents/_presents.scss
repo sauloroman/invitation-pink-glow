@@ -63,4 +63,51 @@
         }
     }
 
+    @media(min-width: 768px) {
+        height: 48rem;
+        background-color: transparent;
+        max-width: 900px;
+        margin: 8rem auto;
+
+        &__overlay {
+            display: none;
+        }
+
+        &__container {
+            width: 50%;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
+
+        &__content {
+            width: 400px;
+            top: 50%;
+            left: calc(100% + 2rem);
+            right: auto;
+            bottom: auto;
+            transform: translateY(-50%);
+            border-radius: 6px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+        }
+
+        &__text {
+            font-size: 1.6rem;
+        }
+    }
+
+    @media(min-width: 1024px) {
+        padding-top: 10rem;
+        max-width: 1000px;
+        height: 75rem;
+
+        &__content {
+            width: 440px;
+            left: calc(100% + 3rem);
+        }
+
+        &__text {
+            font-size: 1.8rem;
+        }
+    }
 }

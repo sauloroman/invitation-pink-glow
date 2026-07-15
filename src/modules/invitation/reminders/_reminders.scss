@@ -65,4 +65,56 @@
         width: 90%;
         opacity: 0.4;
     }
+
+    // Media Queries for tablet & desktop layout
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 8rem 2rem;
+        gap: 4rem;
+
+        &__container {
+            width: 45%;
+            z-index: 2;
+            padding: 2rem 0;
+            padding-bottom: 30rem;
+
+            &--1 {
+                border-top: none;
+            }
+        }
+
+        &__text {
+            font-size: 1.8rem;
+        }
+
+        &__butterflies-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 95%;
+            max-width: 850px;
+            z-index: 1;
+        }
+
+        &__butterflies {
+            width: 100%;
+        }
+
+        &__decoration {
+            width: 12rem;
+            bottom: 4%;
+            right: 4%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        max-width: 1100px;
+        gap: 6rem;
+    }
 }

@@ -37,6 +37,10 @@
             font-family: v.$font-serif;
             color: c.$orchid-base;
         }
+
+        @media (min-width: 768px) {
+            font-size: 1.8rem;
+        }
     }
 
     &__jarron {

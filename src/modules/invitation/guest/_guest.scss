@@ -12,7 +12,7 @@
 
     &__wrapper {
         position: relative;
-        width: 80%;
+        width: 90%;
         max-width: 450px;
         margin-bottom: 2rem;
         display: flex;
@@ -25,7 +25,6 @@
         padding: 1rem;
         width: 100%;
         position: relative;
-        @include m.folded-corners(3rem, 'bottom-left');
     }
 
     &__monio {
@@ -54,8 +53,14 @@
         z-index: 2;
     }
 
+
     &__header {
         margin-bottom: 3.2rem;
+
+        &-icon {
+            margin-bottom: 2rem;
+            @include m.icon(c.$beige-tint-900, c.$orchid-base, 1rem);
+        }
     }
 
     &__text {
@@ -105,15 +110,13 @@
 
     &__photo-wrapper {
         position: relative;
-        width: 80%;
-        max-width: 360px;
+        width: 95%;
         margin: 4rem auto 0 auto;
         padding: 1rem;
     }
 
     &__photo-frame {
         padding: 1.2rem;
-        border-radius: 20rem 20rem 1.5rem 1.5rem;
         border: 1px solid c.$beige-tint-200;
         box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.05);
         position: relative;
@@ -123,11 +126,17 @@
     &__photo {
         margin: 5rem 0;
         margin-bottom: 2rem;
-        width: 80%;
-        height: 45rem;
-        border-radius: 18.8rem 18.8rem 0.8rem 0.8rem;
-        background-size: cover;
-        background-position: top;
+        width: 90%;
+        height: 50rem;
+        position: relative;
+        overflow: hidden;
+
+        &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
     }
 
     &__photo-butterflies {
@@ -153,13 +162,15 @@
     }
 
     &__jarron {
+        padding: 6rem 0;
         width: 14rem;
         object-fit: cover;
         z-index: 2;
     }
 
     &__end {
-        width: 80%;
+        width: 90%;
+        padding: 0 2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -176,7 +187,78 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        margin-bottom: 1rem;
+        border-bottom: 1px solid currentColor;
+    }
+
+    &__datetext {
+        margin-top: 1rem;
+        text-align: center;
+        font-family: v.$font-serif !important;
+        font-weight: 300 !important;
+        font-size: 2.4rem !important;
+    }
+
+    &__date-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .countdown__button {
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        grid-template-areas:
+            "info photo"
+            "date photo";
+        align-items: center;
+        gap: 4rem;
+        max-width: 900px;
+        margin: 0 auto;
+        padding-top: 6rem;
+        padding-bottom: 8rem;
+
+        &__wrapper {
+            grid-area: info;
+            margin-bottom: 0;
+            width: 100%;
+            max-width: 450px;
+            justify-self: end;
+        }
+
+        &__photo {
+            grid-area: photo;
+            margin: 0;
+            width: 100%;
+            max-width: 380px;
+            height: 52rem;
+            justify-self: start;
+        }
+
+        &__end {
+            grid-area: date;
+            width: 100%;
+            max-width: 450px;
+            justify-self: end;
+        }
+
+        &__jarron {
+            padding: 2rem 0;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        gap: 6rem;
+        max-width: 1000px;
+
+        &__photo {
+            max-width: 400px;
+            height: 55rem;
+        }
     }
 
 }

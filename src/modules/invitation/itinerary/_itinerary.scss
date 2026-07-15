@@ -90,4 +90,42 @@
         }
     }
 
+    @media (min-width: 768px) {
+        &__list {
+            width: 50%;
+            gap: 4rem;
+        }
+
+        &__item {
+            align-items: center;
+
+            &-name {
+                font-size: 2rem;
+            }
+
+            &-description {
+                font-size: 1.8rem;
+            }
+
+            &-hour {
+                font-size: 2rem;
+            }
+        }
+
+        &__decoration {
+            opacity: 0.8;
+
+            &--left {
+                top: 5%;
+                left: 5%;
+                width: 16rem;
+            }
+
+            &--right {
+                right: 5%;
+                bottom: -8%;
+                width: 18rem;
+            }
+        }
+    }
 }

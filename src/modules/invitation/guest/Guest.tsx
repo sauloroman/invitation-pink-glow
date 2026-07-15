@@ -1,10 +1,15 @@
 import React from 'react'
 import { SectionHeader } from '@/common/components/SectionHeader/SectionHeader'
-import photo from '@/assets/images/1.jpg'
+import photo1 from '@/assets/images/1.jpg'
+import photo2 from '@/assets/images/2.jpg'
+import photo3 from '@/assets/images/3.jpg'
+import photo4 from '@/assets/images/4.jpg'
+import photo5 from '@/assets/images/5.jpg'
 import jarron from '@/assets/images/jarron-2.png'
-import { CalendarBlankIcon } from '@phosphor-icons/react'
+import { CalendarBlankIcon, CheckIcon } from '@phosphor-icons/react'
 import { downloadCalendarEvent } from '@/common/helpers/calendar'
 import { scrollToElement } from '@/common/helpers/navigation'
+import { Carousel } from '@/common'
 
 export const Guest: React.FC = () => {
     return (
@@ -12,7 +17,8 @@ export const Guest: React.FC = () => {
             <div className="guest__wrapper">
                 <div className="guest__container">
                     <div className="guest__content">
-                        <div className="guest__header">
+                        <div className="guest__header flex flex-col justify-center items-center">
+                            <CheckIcon className='guest__header-icon' size={48} weight='thin' />
                             <SectionHeader
                                 subtitle='RSVP'
                                 title='Invitado Especial'
@@ -35,17 +41,13 @@ export const Guest: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="guest__monio">
-                    <img src={monio} alt="monio" className="guest__monio-img" />
-                </div> */}
             </div>
 
-            <div className="guest__photo" style={{ backgroundImage: `url(${photo})` }}>
-            </div>
             <div className='guest__end'>
                 <img className='guest__jarron' src={jarron} alt="Jarrón" />
-                <div>
+                <div className="guest__date-container">
                     <p className='guest__date'>10 <span className='dot'></span>12 <span className='dot'></span>2026</p>
+                    <p className='guest__datetext'>¡No Faltes!</p>
                     <div className="countdown__button">
                         <button
                             onClick={downloadCalendarEvent}
@@ -57,6 +59,16 @@ export const Guest: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            <Carousel
+                images={[photo1, photo2, photo3, photo4, photo5]}
+                effect='fade'
+                className='guest__photo'
+                imageClassName='guest__photo-img'
+                autoplay={true}
+                delay={2500}
+                pagination={true}
+            />
         </section>
     )
 }

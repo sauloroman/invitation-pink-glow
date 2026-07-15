@@ -2,6 +2,7 @@
 @use '../../../scss/base/variables' as v;
 
 .dress-code {
+    margin: 8rem 0;
     padding: 2rem;
     padding-right: 7rem;
     height: 55rem;
@@ -60,5 +61,57 @@
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        padding: 0;
+        height: 60rem;
+        background-color: transparent;
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+
+        &__container {
+            width: 50%;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        &__content {
+            width: 400px;
+            bottom: -4rem;
+            right: -12rem;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+        }
+
+        &__messages {
+            padding: 4rem 3rem;
+        }
+
+        &__text {
+            font-size: 1.7rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        max-width: 1050px;
+        height: 60rem;
+
+        &__content {
+            right: -100%;
+            width: 440px;
+            bottom: 50%;
+            transform: translateY(50%);
+        }
+
+        &__messages {
+            padding: 12rem 0;
+        }
+
+        &__text {
+            font-size: 2rem;
+        }
     }
 }

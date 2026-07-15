@@ -39,3 +39,16 @@ img {
     height: auto;
     object-fit: cover;
 }
+
+.swiper-pagination-bullet {
+    background-color: c.$beige-shade-300 !important;
+    opacity: 0.5 !important;
+    transition: all 0.3s ease;
+
+    &-active {
+        background-color: c.$orchid-base !important;
+        opacity: 1 !important;
+        width: 1.6rem !important;
+        border-radius: 4px !important;
+    }
+}

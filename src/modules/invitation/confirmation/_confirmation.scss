@@ -191,4 +191,54 @@
         }
     }
 
+    @media (min-width: 768px) {
+        margin-top: 15rem;
+        margin-bottom: 10rem;
+
+        &__text {
+            max-width: 700px;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        &__form {
+            max-width: 800px;
+            font-size: 2rem;
+
+            &-label {
+                font-size: 1.8rem;
+            }
+
+            &-option {
+                &-text {
+                    font-size: 1.8rem;
+                }
+            }
+
+            &-input {
+                font-size: 1.8rem;
+            }
+
+            &-select {
+                font-size: 1.8rem;
+            }
+
+            &-textarea {
+                font-size: 1.8rem;
+            }
+        }
+
+        &__decoration {
+            display: none;
+            pointer-events: none;
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+        &__container {
+            max-width: 1200px;
+        }
+    }
+
 }

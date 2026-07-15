@@ -9,3 +9,4 @@ export { Itinerary } from './itinerary/Itinerary';
 export { Presents } from './presents/Presents';
 export { Confirmation } from './confirmation/Confirmation'
 export { Farewell } from './farewell/Farewell'
+export { Gallery } from './gallery/Gallery'
